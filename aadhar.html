@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<title></title>
+
+<style type="text/css">
+	ul
+	{
+		list-style: none;
+		display:inline-flex;
+		float:left;
+	}
+	li
+	{
+		padding: 20px;
+    font-size: 25px;	
+	}
+  li a {
+    display: block;
+    color: white;
+    
+    padding: 15px 145px;
+    font-family: Lucida Calligraphy;
+  }
+
+  li a:hover
+  {
+    background-color:red;
+  }
+	#a
+	{
+		border: 2px solid black;
+		height: 60px;
+		background-color:orange;
+	}
+</style></head>
+
+<body>
+<center><img src="logo.jpg" style="width: 1500px;">
+<header style="width: 1500px">
+	<div id="a">
+		<ul>
+		<a href="i.html"><li>Home</li></a>
+			<a  class="active" href="aadhar.html"><li>Aadhar Card No.</li></a>
+			<a href="ration.html"><li>Ration Card No.</li></a>
+			<a href="#"><li>Update Details</li></a>
+
+		</ul>
+	</div>
+</header>
+</center>
+<style type="text/css">
+
+input[type=text], input[type=password],input[type=number],input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 280px 15px 0px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: inset;
+}
+
+</style>
+<div>
+<form method="post" action="" style="border:50px;">
+  <div class="container">
+    <font color="black" size="8px" style="font-weight: bold; margin-left: 50px;">
+   
+   <h1>Aadhar Card No.</h1>
+    </font>
+    <font color="black" style="font-size: 20px;">
+   <table style="padding: 10px;">
+    <hr>
+<tr>
+    <td for="fname"><b>Holder Name</b></td>
+    <td><input type="text" placeholder="ABC" name="hname" required>
+</td></tr>
+<tr>
+    <td for="number"><b>Aadhar No. (12 digit)</b></td>
+    <td><input type="text" pattern="\d{12}"  placeholder="123" name="No" required></td>
+</tr>
+<tr><td>
+<div style="display: inline; width: 50px; padding: 250px; margin: 15px;">
+   <a href="Home1.php"> <button type="submit" name="add" class="submit" onclick="document.getElementById('id01').style.display='none'" style="background-color: green; width: 30%;">Check</button></a>
+</div>
+</td></tr>
+
+</table>
+</font>
+</div>
+</form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<title></title>
+
+<style type="text/css">
+	ul
+	{
+		list-style: none;
+		display:inline-flex;
+		float:left;
+	}
+	li
+	{
+		padding: 20px;
+    font-size: 25px;	
+	}
+  li a {
+    display: block;
+    color: white;
+    
+    padding: 15px 145px;
+    font-family: Lucida Calligraphy;
+  }
+
+  li a:hover
+  {
+    background-color:red;
+  }
+	#a
+	{
+		border: 2px solid black;
+		height: 60px;
+		background-color:orange;
+	}
+</style></head>
+
+<body>
+<center><img src="logo.jpg" style="width: 1500px;">
+<header style="width: 1500px">
+	<div id="a">
+		<ul>
+		<a href="index.php"><li>Home</li></a>
+			<a  class="active" href="aadhar.php"><li>Aadhar Card No.</li></a>
+			<a href="ration.php"><li>Ration Card No.</li></a>
+			<a href="#"><li>Update Details</li></a>
+
+		</ul>
+	</div>
+</header>
+</center>
+
+<table align="center" width="800" border="4px solid black" style="border-style:groove; border-right:4px solid black;" >
+<tr style="font-family:'Lithos Pro Regular'; font-weight:bold; font-size:18px; font-variant:small-caps; padding-left:6px;">
+<th>Aadhar No.</th>
+<th>Ration No.</th>
+<th>Name</th>
+<th>Address</th>
+<th>Mobil No.</th>
+<th>City</th>
+<th>State</th>
+</tr></body>
+<?php
+$a=$_REQUEST['hname'];
+error_reporting(0);
+$b=$_REQUEST['no'];
+$con=mysqli_connect("localhost","root","","aadhar");
+$sql="select * from card where Aadharno='$b' and Name='$a' ";
+$result=mysqli_query($con,$sql);
+$arr=mysqli_fetch_array($result);
+$num_record=mysqli_num_rows($result);
+if($num_record>0)
+{
+	?>
+	<tr>
+	<th><?php echo $arr['Aadharno']; ?></th>
+	<?php echo "<br>"; ?>
+	<th><?php echo $arr['Rationno']; ?></th>
+	<?php echo "<br>"; ?>
+	<th><?php echo $arr['Name']; ?></th>
+	<?php echo "<br>"; ?>
+	<th><?php echo $arr['Address']; ?></th>
+	<?php echo "<br>"; ?>
+	<th><?php echo $arr['Mobileno']; ?></th>
+	<?php echo "<br>"; ?>
+	<th><?php echo $arr['City']; ?></th>
+	<?php echo "<br>"; ?>
+	<th><?php echo $arr['State']; ?></th>
+</tr>
+</table>
+	<?php echo "<br>"; ?>
+	<?php 
+     }
+else
+{
+	echo "not found";
+}
+?>
+
+
+
+<style type="text/css">
+
+footer
+{
+  background-color: rgba(0,0,0,1);
+  margin-top: 0px;
+}
+
+
+.fa {
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.4;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+ #links1{
+
+ font-weight: bold;
+  text-decoration: none;
+  font-size: 19px;  
+  font-family: 'Lithos Pro Regular';
+  text-transform:1px 1px; 
+  text-transform: uppercase;
+  color:white;
+  padding: 20px;
+  text-shadow: 1px 1px;
+ }
+
+ #links
+ {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 22px;  
+  font-family: 'Lithos Pro Regular';
+  text-transform:1px 1px; 
+  text-transform: uppercase;
+  color:red;
+  padding: 20px;
+  text-shadow: 1px 1px;
+ }
+ #links:hover
+ {
+    color:white;
+ }
+ #ul2
+ {
+  list-style: none;
+
+  margin-top: 30px;
+ }
+
+
+
+
+</style>
+<footer style="margin-top: 300px;">
+<div style="background-color:black; height: 300px; width: 100%;">
+<div class="col-md-12">
+</div>
+  <div class="col-md-4"><br>  
+  <ul id="ul2">
+<li><a id="links1" href="house.html">home</a></li>
+  <li><a  id="links1" href="About Us.html">About us</a></li>
+  <li><a id="links1" href="#">conatct us</a></li>
+  <li><a id="links1" href="#">log in</a></li>
+  </ul>
+  </div>
+  <div class="col-md-4"><h3 id="links1" style=" font-size: 24px;  " >&emsp;&emsp;&emsp;Contact Us</h3>
+  <pre   style="color:red; text-decoration:none; backgro und-color:rgba(0,0,0,0); border:none; font-weight:bolder; font-size:18px;
+  font-family:'Lithos Pro Regular';">
+  Email: bhamashah@rajasthan.gov.in
+  Landline : 0141-5166227,223,224</pre>
+  
+   <a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-google"></a>
+<a href="#" class="fa fa-linkedin"></a>
+<a href="#" class="fa fa-youtube"></a>
+</div>
+<div class="col-md-4"><h3 id="links1" style=" font-size: 24px;  " >&emsp;&emsp;&emsp;Address</h3>
+ <pre   style="color:red; text-decoration:none; background-color:rgba(0,0,0,0); border:none; font-weight:bolder; font-size:18px;
+  font-family:'Lithos Pro Regular';">
+  IT Building, Yojana Bhawan Premises, Tilak Marg,<br>
+   C-Scheme, Jaipur, Rajasthan India - 302005,
+</pre>
+
+</footer>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
